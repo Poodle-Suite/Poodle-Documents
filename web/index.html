@@ -49,7 +49,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="getDocuments()">
     <header>
         <h1>Poodle</h1>
         <h1 style="color: blue;">Docs</h1>
@@ -68,6 +68,7 @@
         </div>
     </md-dialog>
     <md-divider inset></md-divider>
+    <div id="cooldocs"></div>
     <script>
         document.getElementById("newbtn").addEventListener("click", openDialog);
         document.getElementById("okbtn").addEventListener("click", makeNewDoc);
@@ -76,13 +77,19 @@
             console.log("Richard watterson playing calc (short for calculator)");
         }
         function makeNewDoc() {
-            const name = document.getElementById("docName").value
-            console.log("Nicole water sons")
-            console.log(name)
-            window.location.href = "new.html?name=" + name
+            const name = document.getElementById("docName").value;
+            console.log("Nicole water sons");
+            console.log(name);
+            window.location.href = "new.html?name=" + name;
         }
         function getDocuments() {
             const items = { ...localStorage };
+            const realjson = JSON.stringify(items, null, 2);
+            const keys = Object.keys(items);
+            console.log("OG json" + items);
+            console.log("Parsed JSON " + realjson);
+            console.log(keys);
+            cooldocs.innerText = keys;
         }
     </script>
 </body>
