@@ -56,14 +56,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="getName()">
     <header>
         <h1>Poodle</h1>
         <h1 style="color: blue;">Docs</h1>
         <h1>-</h1>
-        <h1>Document Name (real one coming soon)</h1>
+        <h1 id="titlename"></h1>
     </header>
     <md-divider inset></md-divider>
     <textarea id="textdoc"></textarea>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        function getName() {
+            console.log(name);
+            document.getElementById("titlename").innerText = name;
+        }
+        function saveDocs() {
+            let textToBeSaved = document.getElementById("textdoc").value;
+            localStorage.setItem(name, textToBeSaved);
+        }
+        const interval = setInterval(function() {
+            console.log("Saving document to localstorage!")
+            saveDocs()
+        }, 5000);
+    </script>
 </body>
 </html>

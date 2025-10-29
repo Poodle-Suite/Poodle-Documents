@@ -79,6 +79,10 @@
             const name = document.getElementById("docName").value
             console.log("Nicole water sons")
             console.log(name)
+            window.location.href = "new.html?name=" + name
+        }
+        function getDocuments() {
+            const items = { ...localStorage };
         }
     </script>
 </body>
