@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poodle Docs</title>
+    <title>New Doc | Poodle Docs</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script type="importmap">
         {
@@ -23,6 +23,9 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
     <style>
+        html, body {
+            height: 100%;
+        }
         * {
             font-family: "Roboto", sans-serif;
             font-optical-sizing: auto;
@@ -41,8 +44,12 @@
             margin-left: 0.25rem;
         }
 
-        #newbtn {
-            margin-left: auto;
+        #textdoc {
+            border: none;
+            resize: none;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 20px;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,33 +60,10 @@
     <header>
         <h1>Poodle</h1>
         <h1 style="color: blue;">Docs</h1>
-        <md-filled-button id="newbtn">+</md-filled-button>
+        <h1>-</h1>
+        <h1>Document Name (real one coming soon)</h1>
     </header>
-    <md-dialog id="newdocdialog">
-        <div slot="headline">
-            New Doc
-        </div>   
-        <form slot="content" id="form-id" method="dialog">
-            <md-outlined-text-field label="Document Name" id="docName" name="docName" style="width: 100%;"></md-outlined-text-field>
-        </form>
-        <div slot="actions">
-            <md-text-button id="okbtn" form="form-id">Ok</md-text-button>
-            <md-text-button id="cancelbtn" form="form-id">Cancel</md-text-button>
-        </div>
-    </md-dialog>
     <md-divider inset></md-divider>
-    <script>
-        document.getElementById("newbtn").addEventListener("click", openDialog);
-        document.getElementById("okbtn").addEventListener("click", makeNewDoc);
-        function openDialog() {
-            document.getElementById("newdocdialog").setAttribute("open", "");
-            console.log("Richard watterson playing calc (short for calculator)");
-        }
-        function makeNewDoc() {
-            const name = document.getElementById("docName").value
-            console.log("Nicole water sons")
-            console.log(name)
-        }
-    </script>
+    <textarea id="textdoc"></textarea>
 </body>
 </html>
