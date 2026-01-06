@@ -1,5 +1,7 @@
 # Poodle-Documents
 poodle docs
+
+a google docs clone using localstorage i made to practice some web dev skills
 # Notice
 this is a historical version of Poodle Docs!
 
