@@ -1,7 +1,7 @@
 # Poodle-Documents
 poodle docs
 
-a google docs clone using localstorage i made to practice some web dev skills
+a google docs clone using localstorage i made to practice some web dev skills & to try material design
 # Notice
 this is a historical version of Poodle Docs!
 
